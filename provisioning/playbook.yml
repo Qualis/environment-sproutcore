@@ -1,0 +1,18 @@
+---
+- hosts: all
+
+  tasks:
+
+    - name: Get RVM install script
+      get_url: url=https://get.rvm.io dest=/home/vagrant/rvm-installer
+
+    - name: Install RVM
+      shell: /bin/bash /home/vagrant/rvm-installer stable --ruby=1.9.3 --autolibs=3
+
+    - name: Add bashrc RVM entry
+      lineinfile: dest=/home/vagrant/.bashrc line='source ~/.rvm/scripts/rvm'
+
+    - name: Install sproutcore
+      shell: bash -l -c 'gem install sproutcore -v 1.9.1'
+
+  handlers:

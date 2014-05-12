@@ -1,2 +1,2 @@
-vagrant_sproutcore
+vagrant-sproutcore
 ==================

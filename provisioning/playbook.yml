@@ -15,4 +15,7 @@
     - name: Install sproutcore
       shell: bash -l -c 'gem install sproutcore -v 1.9.1'
 
+    - name: Install java
+      apt: pkg=openjdk-7-jre
+
   handlers:

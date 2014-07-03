@@ -17,5 +17,6 @@
 
     - name: Install java
       apt: pkg=openjdk-7-jre
+      sudo: yes
 
   handlers:

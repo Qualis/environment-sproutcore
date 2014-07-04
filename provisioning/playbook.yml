@@ -5,18 +5,23 @@
 
     - name: Get RVM install script
       get_url: url=https://get.rvm.io dest=/home/vagrant/rvm-installer
+      tags: run
 
     - name: Install RVM
       shell: /bin/bash /home/vagrant/rvm-installer stable --ruby=1.9.3 --autolibs=3
+      tags: run
 
     - name: Add bashrc RVM entry
       lineinfile: dest=/home/vagrant/.bashrc line='source ~/.rvm/scripts/rvm'
-
-    - name: Install sproutcore
-      shell: bash -l -c 'gem install sproutcore -v 1.9.1'
+      tags: run
 
     - name: Install java
       apt: pkg=openjdk-7-jre
       sudo: yes
+      tags: run
+      
+    - name: Install sproutcore
+      shell: bash -l -c 'gem install sproutcore -v 1.9.1'
+      tags: development
 
   handlers:

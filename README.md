@@ -1,2 +1,2 @@
-vagrant-sproutcore
-==================
+environment-sproutcore
+======================

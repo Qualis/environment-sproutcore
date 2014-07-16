@@ -9,6 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "provisioning/playbook.yml"
+    ansible.tags = "sproutcore"
   end
 
   if Vagrant.has_plugin?("vagrant-cachier")

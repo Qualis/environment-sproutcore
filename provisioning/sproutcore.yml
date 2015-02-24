@@ -1,3 +1,9 @@
+    - name: Get RVM key
+      shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+      tags:
+      - sproutcore
+      - development
+
     - name: Get RVM install script
       get_url: url=https://get.rvm.io dest=~/rvm-installer
       sudo: yes

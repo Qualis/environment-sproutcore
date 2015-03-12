@@ -1,5 +1,7 @@
     - name: Get RVM key
       shell: gpg --keyserver hkp://keys.gnupg.net --recv-keys D39DC0E3
+      sudo: yes
+      sudo_user: "{{ build_user }}"
       tags:
       - sproutcore
       - development

@@ -7,8 +7,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "https://vagrantcloud.com/ubuntu/trusty64"
   config.vm.box = "ubuntu/trusty64"
 
+  config.vm.hostname = "vagrant-sproutcore"
+  config.vm.network :private_network, type: "dhcp"
+
   config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "provisioning/playbook.yml"
+    ansible.playbook = "playbook.yml"
     ansible.tags = "sproutcore"
     ansible.extra_vars = {
       build_user: "vagrant"
